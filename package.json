@@ -1,0 +1,24 @@
+{
+    "name": "elapsed",
+    "version": "0.0.1",
+    "description": "A module for getting the elapsed time between two dates in various representation.",
+    "main": "index.js",
+    "dependencies": {},
+    "keywords": [
+        "elapsed",
+        "time",
+        "date",
+        "browserify",
+        "interval"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gerhardberger/elapsed.git"
+    },
+    "homepage": "https://github.com/gerhardberger/elapsed",
+    "author": {
+        "name": "Gerhard Berger",
+        "email": "93.morph@gmail.com",
+        "url": "https://twitter.com/gerhard_berger"
+    }
+}
