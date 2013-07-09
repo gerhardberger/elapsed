@@ -23,7 +23,7 @@ Elapsed.prototype.set = function() {
 	this.weeks = { num: Math.floor(this.elapsedTime / divider) };
 	divider *= (30 / 7);
 	this.months = { num: Math.floor(this.elapsedTime / divider) };
-	divider = divider / (30 / 7) * 365;
+	divider = divider / (30 / 7) / 7 * 365;
 	this.years = { num: Math.floor(this.elapsedTime / divider) };
 
 	this.seconds.text = this.seconds.num + ' second' + (this.seconds.num < 2 ? '' : 's');
@@ -34,13 +34,13 @@ Elapsed.prototype.set = function() {
 	this.months.text = this.months.num + ' month' + (this.months.num < 2 ? '' : 's');
 	this.years.text = this.years.num + ' year' + (this.years.num < 2 ? '' : 's');
 
-	if (this.years.num > 0) this.optimal =  this.years.text;
-	else if (this.months.num > 0) this.optimal =  this.months.text;
-	else if (this.weeks.num > 0) this.optimal =  this.weeks.text;
-	else if (this.days.num > 0) this.optimal =  this.days.text;
-	else if (this.hours.num > 0) this.optimal =  this.hours.text;
-	else if (this.minutes.num > 0) this.optimal =  this.minutes.text;
-	else if (this.seconds.num > 0) this.optimal =  this.seconds.text;
+	if (this.years.num > 0) this.optimal = this.years.text;
+	else if (this.months.num > 0) this.optimal = this.months.text;
+	else if (this.weeks.num > 0) this.optimal = this.weeks.text;
+	else if (this.days.num > 0) this.optimal = this.days.text;
+	else if (this.hours.num > 0) this.optimal = this.hours.text;
+	else if (this.minutes.num > 0) this.optimal = this.minutes.text;
+	else if (this.seconds.num > 0) this.optimal = this.seconds.text;
 
 	return this;
 };

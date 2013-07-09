@@ -1,11 +1,11 @@
 var Elapsed = require('./index.js');
 
 var now = new Date();
-var then = new Date(2013, 03, 15, 15, 22);
+var then = new Date(2012, 03, 15, 15, 22);
 
 console.log(now, then);
 
-var elapsedTime = new Elapsed(new Date(2013, 05, 2), new Date(2013, 05, 25));
+var elapsedTime = new Elapsed(then, now);
 
 console.log(elapsedTime.seconds.text);
 
