@@ -64,3 +64,10 @@ var i10n = {
 ```
 
 Each property holds an array containing the singular and the plural-suffix.
+
+If you don't need to specify the `to`-parameter, you can pass in the localization as second parameter:
+
+``` js
+var i10n = {…};
+var elapsedTime = new Elapsed(from, i10n);
+```

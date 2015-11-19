@@ -11,8 +11,8 @@ var l10nDefaults = {
 
 function Elapsed (from, to, l10n) {
 	this.from = from;
-	this.to = to || new Date();
-	this.l10n = l10n || l10nDefaults;
+	this.to = arguments.length === 2 && to instanceof Date ? to : new Date();
+	this.l10n = arguments.length === 3 ? l10n : arguments.length === 2 && !(to instanceof Date) ? to : l10nDefaults;
 	if (!(this.from instanceof Date && this.to instanceof Date)) return;
 
 	this.set();

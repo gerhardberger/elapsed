@@ -50,3 +50,21 @@ console.log(localizedElapsedTime.months.text);
 console.log(localizedElapsedTime.years.text);
 
 console.log(localizedElapsedTime.optimal);
+
+var localizedElapsedTimeWithImplicitNow = new Elapsed(then, german);
+
+console.log(localizedElapsedTimeWithImplicitNow.seconds.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.minutes.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.hours.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.days.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.weeks.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.months.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.years.text);
+
+console.log(localizedElapsedTimeWithImplicitNow.optimal);
