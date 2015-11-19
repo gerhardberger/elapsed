@@ -19,9 +19,9 @@ console.log(elapsedTime.optimal);     // "3 weeks"
 #### create
 
 ``` js
-var elapsedTime = new Elapsed(from, to);
+var elapsedTime = new Elapsed(from, to, i10n);
 ```
-The `from` (required) and `to` (optional, default: now) must be `Date` objects.
+The `from` (required) and `to` (optional, default: now) must be `Date` objects. `i10n` (optional: default: english) must be a plain object.
 
 #### properties
 - __milliSeconds__: _(Object)_, `num` property is the time in _Number_, `text` is the time in _String_.
@@ -39,3 +39,28 @@ The `from` (required) and `to` (optional, default: now) must be `Date` objects.
 #### methods
 - __set()__: calculating the properties.
 - __refresh(to)__: refresh the `to` date. `to` is _optional_ it defaults to _now_.
+
+#### Localization
+
+If you want to localize the elapsed time, you can provide an object holding the translations by passing it into the constructor as a third argument.
+
+``` js
+var i10n = {…};
+var elapsedTime = new Elapsed(from, to, i10n);
+```
+
+Take a look at the english version, to get an impression of how the object should look like:
+
+``` js
+var i10n = {
+	seconds: ['second', 's'],
+	minutes: ['minute', 's'],
+	hours: ['hour', 's'],
+	days: ['day', 's'],
+	weeks: ['week', 's'],
+	months: ['month', 's'],
+	years: ['year', 's']
+};
+```
+
+Each property holds an array containing the singular and the plural-suffix.
