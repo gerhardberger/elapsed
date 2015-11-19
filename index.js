@@ -1,6 +1,18 @@
-function Elapsed (from, to) {
+
+var l10nDefaults = {
+	seconds: ['second', 's'],
+	minutes: ['minute', 's'],
+	hours: ['hour', 's'],
+	days: ['day', 's'],
+	weeks: ['week', 's'],
+	months: ['month', 's'],
+	years: ['year', 's']
+};
+
+function Elapsed (from, to, l10n) {
 	this.from = from;
 	this.to = to || new Date();
+	this.l10n = l10n || l10nDefaults;
 	if (!(this.from instanceof Date && this.to instanceof Date)) return;
 
 	this.set();
@@ -26,13 +38,13 @@ Elapsed.prototype.set = function() {
 	divider = divider / (30 / 7) / 7 * 365;
 	this.years = { num: Math.floor(this.elapsedTime / divider) };
 
-	this.seconds.text = this.seconds.num + ' second' + (this.seconds.num < 2 ? '' : 's');
-	this.minutes.text = this.minutes.num + ' minute' + (this.minutes.num < 2 ? '' : 's');
-	this.hours.text = this.hours.num + ' hour' + (this.hours.num < 2 ? '' : 's');
-	this.days.text = this.days.num + ' day' + (this.days.num < 2 ? '' : 's');
-	this.weeks.text = this.weeks.num + ' week' + (this.weeks.num < 2 ? '' : 's');
-	this.months.text = this.months.num + ' month' + (this.months.num < 2 ? '' : 's');
-	this.years.text = this.years.num + ' year' + (this.years.num < 2 ? '' : 's');
+	this.seconds.text = this.seconds.num + ' ' + this.l10n.seconds[0] + (this.seconds.num < 2 ? '' : this.l10n.seconds[1]);
+	this.minutes.text = this.minutes.num + ' ' + this.l10n.minutes[0] + (this.minutes.num < 2 ? '' : this.l10n.minutes[1]);
+	this.hours.text = this.hours.num + ' ' + this.l10n.hours[0] + (this.hours.num < 2 ? '' : this.l10n.hours[1]);
+	this.days.text = this.days.num + ' ' + this.l10n.days[0] + (this.days.num < 2 ? '' : this.l10n.days[1]);
+	this.weeks.text = this.weeks.num + ' ' + this.l10n.weeks[0] + (this.weeks.num < 2 ? '' : this.l10n.weeks[1]);
+	this.months.text = this.months.num + ' ' + this.l10n.months[0] + (this.months.num < 2 ? '' : this.l10n.months[1]);
+	this.years.text = this.years.num + ' ' + this.l10n.years[0] + (this.years.num < 2 ? '' : this.l10n.years[1]);
 
 	if (this.years.num > 0) this.optimal = this.years.text;
 	else if (this.months.num > 0) this.optimal = this.months.text;
