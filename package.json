@@ -1,6 +1,6 @@
 {
     "name": "elapsed",
-    "version": "0.0.2",
+    "version": "0.0.6",
     "description": "A module for getting the elapsed time between two dates in various representation.",
     "main": "index.js",
     "dependencies": {},

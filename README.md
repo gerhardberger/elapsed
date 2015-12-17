@@ -53,6 +53,7 @@ Take a look at the english version, to get an impression of how the object shoul
 
 ``` js
 var i10n = {
+  milliSeconds: ['millisecond', 's'],
 	seconds: ['second', 's'],
 	minutes: ['minute', 's'],
 	hours: ['hour', 's'],

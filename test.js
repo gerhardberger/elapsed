@@ -1,4 +1,4 @@
-var Elapsed = require('./index.js');
+var Elapsed = require('./');
 
 var now = new Date();
 var then = new Date(2012, 03, 15, 15, 22);
@@ -6,6 +6,8 @@ var then = new Date(2012, 03, 15, 15, 22);
 console.log(now, then);
 
 var elapsedTime = new Elapsed(then, now);
+
+console.log(elapsedTime.milliSeconds.text);
 
 console.log(elapsedTime.seconds.text);
 
@@ -24,7 +26,8 @@ console.log(elapsedTime.years.text);
 console.log(elapsedTime.optimal);
 
 var german = {
-	seconds: ['Sekunde', 'n'],
+  milliSeconds: ['millisekunde', 'n'],
+  seconds: ['Sekunde', 'n'],
 	minutes: ['Minute', 'n'],
 	hours: ['Stunde', 'n'],
 	days: ['Tag', 'e'],
@@ -34,6 +37,8 @@ var german = {
 };
 
 var localizedElapsedTime = new Elapsed(then, now, german);
+
+console.log(localizedElapsedTime.milliSeconds.text);
 
 console.log(localizedElapsedTime.seconds.text);
 
@@ -52,6 +57,8 @@ console.log(localizedElapsedTime.years.text);
 console.log(localizedElapsedTime.optimal);
 
 var localizedElapsedTimeWithImplicitNow = new Elapsed(then, german);
+
+console.log(localizedElapsedTimeWithImplicitNow.milliSeconds.text);
 
 console.log(localizedElapsedTimeWithImplicitNow.seconds.text);
 
