@@ -5,7 +5,7 @@ var then = new Date(2012, 03, 15, 15, 22);
 
 console.log(now, then);
 
-var elapsedTime = new Elapsed(then, now);
+var elapsedTime = new Elapsed(then, Date.now() + 5000);
 
 console.log(elapsedTime.milliSeconds.text);
 
